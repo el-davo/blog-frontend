@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { hashHistory, IndexRoute, Route, Router } from 'react-router';
-import TodoContainer from './todo/todo.container';
+import LandingContainer from './landing/landing.container';
 
 export const routes = (
 	<Router history={hashHistory}>
-		<Route path="/" component={TodoContainer} />
+		<Route path="/" component={LandingContainer} />
 	</Router>
 );

@@ -6,7 +6,8 @@ import { Provider } from 'react-redux';
 import { hashHistory, Router } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
-import {routes} from './routes';
+import { NavbarComponent } from './common/navbar/navbar.component';
+import { routes } from './routes';
 import { configureStore } from './store/configureStore';
 
 injectTapEventPlugin();
@@ -18,6 +19,7 @@ render(
     <MuiThemeProvider>
         <Provider store={store}>
             <div>
+                <NavbarComponent />
                 <Router history={history} routes={routes} />
             </div>
         </Provider>
