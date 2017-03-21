@@ -5,6 +5,10 @@ import ArticleCardContainer from '../../articles/card/article-card.container';
 import { LoadingComponent } from '../../common/loading.component';
 import { LandingState } from '../landing.state';
 
+const style = {
+    padding: 0
+};
+
 interface Props {
     landing: LandingState;
     fetchNewestArticles();
@@ -25,7 +29,7 @@ export class NewestArticlesComponent extends React.Component<Props, any> {
             <div>
                 {
                     !this.props.landing.isFetchingNewestArticles ? (
-                        <Grid fluid>
+                        <Grid fluid style={style}>
                             <Row>
                                 {
                                     this.props.landing.articles.map((article, index) => {

@@ -16,7 +16,7 @@
       "content": "Test 2 description dude",
       "parsedContent": "Test 2 description",
       "imgUrl": "https://facebook.github.io/react/img/logo.svg",
-      "public": true
+      "public": false
     },
     {
       "id": "3",
