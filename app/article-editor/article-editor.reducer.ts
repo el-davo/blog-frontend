@@ -2,10 +2,11 @@ import { Article } from '../landing/landing.state';
 import {
     ADD_ARTICLE, ADD_ARTICLE_FAILED, ADD_ARTICLE_SAVED, EDIT_ARTICLE,
     EDIT_ARTICLE_FAILED, EDIT_ARTICLE_SAVED, EDIT_KEY_ARTICLE_CONTENT, EDIT_KEY_ARTICLE_IMG,
-    EDIT_KEY_ARTICLE_NAME, EDIT_KEY_ARTICLE_SUMMARY, EDITING_REQUEST_PREVIEW, EDITING_REQUEST_PREVIEW_FAILED,
-    EDITING_UPDATE_PREVIEW, FETCH_EDIT_ARTICLE, NEW_KEY_ARTICLE_CONTENT, NEW_KEY_ARTICLE_IMG,
-    NEW_KEY_ARTICLE_NAME, NEW_KEY_ARTICLE_SUMMARY, REQUEST_PREVIEW,
-    REQUEST_PREVIEW_FAILED, UPDATE_EDIT_ARTICLE, UPDATE_PREVIEW
+    EDIT_KEY_ARTICLE_NAME, EDIT_KEY_ARTICLE_SUMMARY, EDIT_TOGGLE_ARTICLE_PUBLIC, EDITING_REQUEST_PREVIEW,
+    EDITING_REQUEST_PREVIEW_FAILED, EDITING_UPDATE_PREVIEW, FETCH_EDIT_ARTICLE, NEW_KEY_ARTICLE_CONTENT,
+    NEW_KEY_ARTICLE_IMG, NEW_KEY_ARTICLE_NAME, NEW_KEY_ARTICLE_SUMMARY,
+    NEW_TOGGLE_ARTICLE_PUBLIC, REQUEST_PREVIEW, REQUEST_PREVIEW_FAILED,
+    UPDATE_EDIT_ARTICLE, UPDATE_PREVIEW
 } from './article-editor.action-types';
 import { articleEditor, ArticleEditorState } from './article-editor.state';
 
@@ -63,6 +64,10 @@ export function articleEditorReducer(state: ArticleEditorState = articleEditor, 
             return { ...state, isFetchingEditingPreview: false, editingArticlePreview: action.markdownOutput };
         case EDITING_REQUEST_PREVIEW_FAILED:
             return { ...state, isFetchingEditingPreview: false };
+        case NEW_TOGGLE_ARTICLE_PUBLIC:
+            return { ...state, newArticle: { ...state.newArticle, public: !state.newArticle.public } };
+        case EDIT_TOGGLE_ARTICLE_PUBLIC:
+            return { ...state, editingArticle: { ...state.editingArticle, public: !state.editingArticle.public } };
         default:
             return state;
     }

@@ -1,10 +1,28 @@
 import {
-    ADD_ARTICLE, ADD_ARTICLE_FAILED, ADD_ARTICLE_SAVED, EDIT_ARTICLE,
-    EDIT_ARTICLE_FAILED, EDIT_ARTICLE_SAVED, EDIT_KEY_ARTICLE_CONTENT, EDIT_KEY_ARTICLE_NAME,
-    EDIT_KEY_ARTICLE_SUMMARY, FETCH_EDIT_ARTICLE, NEW_KEY_ARTICLE_CONTENT, NEW_KEY_ARTICLE_IMG,
-    NEW_KEY_ARTICLE_NAME, NEW_KEY_ARTICLE_SUMMARY, UPDATE_EDIT_ARTICLE, EDIT_KEY_ARTICLE_IMG,
-    REQUEST_PREVIEW, UPDATE_PREVIEW, REQUEST_PREVIEW_FAILED,
-    EDITING_REQUEST_PREVIEW, EDITING_UPDATE_PREVIEW, EDITING_REQUEST_PREVIEW_FAILED
+    ADD_ARTICLE,
+    ADD_ARTICLE_FAILED,
+    ADD_ARTICLE_SAVED,
+    EDIT_ARTICLE,
+    EDIT_ARTICLE_FAILED,
+    EDIT_ARTICLE_SAVED,
+    EDIT_KEY_ARTICLE_CONTENT,
+    EDIT_KEY_ARTICLE_IMG,
+    EDIT_KEY_ARTICLE_NAME,
+    EDIT_KEY_ARTICLE_SUMMARY,
+    EDIT_TOGGLE_ARTICLE_PUBLIC,
+    EDITING_REQUEST_PREVIEW,
+    EDITING_REQUEST_PREVIEW_FAILED,
+    EDITING_UPDATE_PREVIEW,
+    FETCH_EDIT_ARTICLE,
+    NEW_KEY_ARTICLE_CONTENT,
+    NEW_KEY_ARTICLE_IMG,
+    NEW_KEY_ARTICLE_NAME,
+    NEW_KEY_ARTICLE_SUMMARY,
+    NEW_TOGGLE_ARTICLE_PUBLIC,
+    REQUEST_PREVIEW,
+    REQUEST_PREVIEW_FAILED,
+    UPDATE_EDIT_ARTICLE,
+    UPDATE_PREVIEW
 } from './article-editor.action-types';
 import {
     addArticle, addArticleSaved, addArticleFailed, fetchEditArticle,
@@ -12,7 +30,8 @@ import {
     newKeyArticleName, newKeyArticleSummary, newKeyArticleContent, newKeyArticleImg,
     editKeyArticleName, editKeyArticleSummary, editKeyArticleContent, editKeyArticleImg,
     requestPreview, updatePreview, requestPreviewFailed, editingRequestPreview,
-    editingUpdatePreview, editingRequestPreviewFailed
+    editingUpdatePreview, editingRequestPreviewFailed, newToggleArticlePublic,
+    editToggleArticlePublic
 } from './article-editor.actions';
 import { Article } from '../landing/landing.state';
 
@@ -185,6 +204,20 @@ describe('Article Editor Actions', () => {
 
         it('should notify the user that the markdown preview has failed for editing an article', () => {
             editingRequestPreviewFailed().should.eql({ type: EDITING_REQUEST_PREVIEW_FAILED });
+        });
+    });
+
+    describe('newToggleArticlePublic()', () => {
+
+        it('should toggle the public state of the article', () => {
+            newToggleArticlePublic().should.eql({ type: NEW_TOGGLE_ARTICLE_PUBLIC });
+        });
+    });
+
+    describe('editToggleArticlePublic()', () => {
+
+        it('should toggle the public state of the article when editing', () => {
+            editToggleArticlePublic().should.eql({ type: EDIT_TOGGLE_ARTICLE_PUBLIC });
         });
     });
 });

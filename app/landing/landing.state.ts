@@ -15,4 +15,5 @@ export interface Article {
     content: string;
     parsedContent: string;
     imgUrl: string;
+    public: boolean;
 }

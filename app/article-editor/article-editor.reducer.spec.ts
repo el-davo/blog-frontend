@@ -1,10 +1,11 @@
 import {
     ADD_ARTICLE, ADD_ARTICLE_FAILED, ADD_ARTICLE_SAVED, EDIT_ARTICLE,
-    EDIT_ARTICLE_FAILED, EDIT_ARTICLE_SAVED, EDIT_KEY_ARTICLE_CONTENT, EDIT_KEY_ARTICLE_NAME,
-    EDIT_KEY_ARTICLE_SUMMARY, FETCH_EDIT_ARTICLE, NEW_KEY_ARTICLE_CONTENT, NEW_KEY_ARTICLE_IMG,
-    NEW_KEY_ARTICLE_NAME, NEW_KEY_ARTICLE_SUMMARY, UPDATE_EDIT_ARTICLE, EDIT_KEY_ARTICLE_IMG,
-    REQUEST_PREVIEW, UPDATE_PREVIEW, REQUEST_PREVIEW_FAILED,
-    EDITING_REQUEST_PREVIEW, EDITING_UPDATE_PREVIEW, EDITING_REQUEST_PREVIEW_FAILED
+    EDIT_ARTICLE_FAILED, EDIT_ARTICLE_SAVED, EDIT_KEY_ARTICLE_CONTENT, EDIT_KEY_ARTICLE_IMG,
+    EDIT_KEY_ARTICLE_NAME, EDIT_KEY_ARTICLE_SUMMARY, EDITING_REQUEST_PREVIEW, EDITING_REQUEST_PREVIEW_FAILED,
+    EDITING_UPDATE_PREVIEW, FETCH_EDIT_ARTICLE, NEW_KEY_ARTICLE_CONTENT, NEW_KEY_ARTICLE_IMG,
+    NEW_KEY_ARTICLE_NAME, NEW_KEY_ARTICLE_SUMMARY, REQUEST_PREVIEW,
+    REQUEST_PREVIEW_FAILED, UPDATE_EDIT_ARTICLE, UPDATE_PREVIEW,
+    NEW_TOGGLE_ARTICLE_PUBLIC, EDIT_TOGGLE_ARTICLE_PUBLIC
 } from './article-editor.action-types';
 import { articleEditorReducer } from './article-editor.reducer';
 import { articleEditor, ArticleEditorState } from './article-editor.state';
@@ -233,6 +234,30 @@ describe('Article Viewer Reducer', () => {
             let state = { ...articleEditor, isFetchingEditingPreview: true } as ArticleEditorState;
 
             articleEditorReducer(state, action).should.eql({ ...state, isFetchingEditingPreview: false });
+        });
+    });
+
+    describe('NEW_TOGGLE_ARTICLE_PUBLIC', () => {
+
+        it('should toggle the public state of the new article', () => {
+            let action = { type: NEW_TOGGLE_ARTICLE_PUBLIC };
+            let offState = { ...articleEditor, newArticle: { public: false } } as ArticleEditorState;
+            let onState = { ...articleEditor, newArticle: { public: true } } as ArticleEditorState;
+
+            articleEditorReducer(offState, action).should.eql({ ...offState, newArticle: { public: true } } as ArticleEditorState);
+            articleEditorReducer(onState, action).should.eql({ ...onState, newArticle: { public: false } } as ArticleEditorState);
+        });
+    });
+
+    describe('EDIT_TOGGLE_ARTICLE_PUBLIC', () => {
+
+        it('should toggle the public state of the new article', () => {
+            let action = { type: EDIT_TOGGLE_ARTICLE_PUBLIC };
+            let offState = { ...articleEditor, editingArticle: { public: false } } as ArticleEditorState;
+            let onState = { ...articleEditor, editingArticle: { public: true } } as ArticleEditorState;
+
+            articleEditorReducer(offState, action).should.eql({ ...offState, editingArticle: { public: true } } as ArticleEditorState);
+            articleEditorReducer(onState, action).should.eql({ ...onState, editingArticle: { public: false } } as ArticleEditorState);
         });
     });
 

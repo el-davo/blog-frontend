@@ -10,6 +10,7 @@ import { ArticleNameInputComponent } from './form/article-name-input.component';
 import { ArticleSummaryInputComponent } from './form/article-summary.component';
 import { ArticleContentInputComponent } from './form/article-content-input.component';
 import { ArticleImgInputComponent } from './form/article-img-input.component';
+import { ArticlePublicToggleComponent } from './form/article-public-toggle.component';
 import { MarkdownPreviewComponent } from '../preview/markdown-preview.component';
 
 describe('<EditArticleComponent />', () => {
@@ -22,6 +23,7 @@ describe('<EditArticleComponent />', () => {
     let editKeyArticleSummary;
     let editKeyArticleImg;
     let editKeyArticleContent;
+    let editToggleArticlePublic;
     let editingRequestPreview;
 
     beforeEach(() => {
@@ -39,6 +41,7 @@ describe('<EditArticleComponent />', () => {
         editKeyArticleSummary = spy();
         editKeyArticleImg = spy();
         editKeyArticleContent = spy();
+        editToggleArticlePublic = spy();
         editingRequestPreview = spy();
 
         wrapper = shallow(<EditArticleComponent
@@ -50,6 +53,7 @@ describe('<EditArticleComponent />', () => {
             editKeyArticleSummary={editKeyArticleSummary}
             editKeyArticleImg={editKeyArticleImg}
             editKeyArticleContent={editKeyArticleContent}
+            editToggleArticlePublic={editToggleArticlePublic}
             editingRequestPreview={editingRequestPreview} />);
     });
 
@@ -95,6 +99,10 @@ describe('<EditArticleComponent />', () => {
             wrapper.find(CardActions).find({ label: 'Preview' }).should.have.length(1);
         });
 
+        it('should contain ArticlePublicToggleComponent', () => {
+            wrapper.find(ArticlePublicToggleComponent).should.have.length(1);
+        });
+
         it('should contain MarkdownPreviewComponent', () => {
             wrapper.find(MarkdownPreviewComponent).should.have.length(1);
         });
@@ -114,6 +122,7 @@ describe('<EditArticleComponent />', () => {
                 editKeyArticleSummary={editKeyArticleSummary}
                 editKeyArticleImg={editKeyArticleImg}
                 editKeyArticleContent={editKeyArticleContent}
+                editToggleArticlePublic={editToggleArticlePublic}
                 editingRequestPreview={editingRequestPreview} /></MuiThemeProvider>)
         });
 

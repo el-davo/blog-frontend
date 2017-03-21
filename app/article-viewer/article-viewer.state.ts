@@ -8,7 +8,8 @@ export const articleViewer: ArticleViewerState = {
         summary: '',
         content: '',
         parsedContent: '',
-        imgUrl: ''
+        imgUrl: '',
+        public: false
     }
 };
 
