@@ -21,6 +21,7 @@ interface Actions {
     editKeyArticleSummary(character: string);
     editKeyArticleImg(character: string);
     editKeyArticleContent(character: string);
+    editToggleArticlePublic();
     editingRequestPreview(markdown: string);
 }
 
@@ -28,7 +29,7 @@ export const EditArticleContainer: React.StatelessComponent<Props> = (props) => 
     return (
         <div>
             <BreadcrumbComponent routes={props.routes} />
-            
+
             <EditArticleComponent
                 articleEditor={props.articleEditor}
                 articleId={props.articleId}
@@ -38,6 +39,7 @@ export const EditArticleContainer: React.StatelessComponent<Props> = (props) => 
                 editKeyArticleSummary={props.actions.editKeyArticleSummary}
                 editKeyArticleImg={props.actions.editKeyArticleImg}
                 editKeyArticleContent={props.actions.editKeyArticleContent}
+                editToggleArticlePublic={props.actions.editToggleArticlePublic}
                 editingRequestPreview={props.actions.editingRequestPreview} />
         </div>
     );

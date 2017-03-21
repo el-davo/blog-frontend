@@ -15,7 +15,8 @@ describe('<CreateArticleContainer />', () => {
         actions = {
             newKeyArticleName: spy(),
             newKeyArticleSummary: spy(),
-            newKeyArticleContent: spy()
+            newKeyArticleContent: spy(),
+            newToggleArticlePublic: spy()
         }
         const articleEditor = {
 

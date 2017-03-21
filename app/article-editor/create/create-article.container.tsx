@@ -21,6 +21,7 @@ interface Actions {
     newKeyArticleContent(character: string);
     newKeyArticleImg(character: string);
     requestPreview(markdown: string);
+    newToggleArticlePublic();
 }
 
 export const CreateArticleContainer: React.StatelessComponent<Props> = (props) => {
@@ -35,7 +36,8 @@ export const CreateArticleContainer: React.StatelessComponent<Props> = (props) =
                 newKeyArticleSummary={props.actions.newKeyArticleSummary}
                 newKeyArticleContent={props.actions.newKeyArticleContent}
                 newKeyArticleImg={props.actions.newKeyArticleImg}
-                requestPreview={props.actions.requestPreview} />
+                requestPreview={props.actions.requestPreview}
+                newToggleArticlePublic={props.actions.newToggleArticlePublic} />
         </div>
     );
 };

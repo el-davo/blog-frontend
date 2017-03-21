@@ -11,6 +11,7 @@ import { ArticleContentInputComponent } from './form/article-content-input.compo
 import { ArticleImgInputComponent } from './form/article-img-input.component';
 import { ArticleEditorState } from '../article-editor.state';
 import { MarkdownPreviewComponent } from '../preview/markdown-preview.component';
+import { ArticlePublicToggleComponent } from './form/article-public-toggle.component';
 
 describe('<CreateArticleComponent />', () => {
 
@@ -22,6 +23,7 @@ describe('<CreateArticleComponent />', () => {
     let newKeyArticleContent;
     let newKeyArticleImg;
     let requestPreview;
+    let newToggleArticlePublic;
 
     beforeEach(() => {
         articleEditor = {
@@ -38,6 +40,7 @@ describe('<CreateArticleComponent />', () => {
         newKeyArticleContent = spy();
         newKeyArticleImg = spy();
         requestPreview = spy();
+        newToggleArticlePublic = spy();
 
         wrapper = shallow(<CreateArticleComponent
             addArticle={addArticle}
@@ -46,7 +49,8 @@ describe('<CreateArticleComponent />', () => {
             newKeyArticleSummary={newKeyArticleSummary}
             newKeyArticleContent={newKeyArticleContent}
             newKeyArticleImg={newKeyArticleImg}
-            requestPreview={requestPreview} />);
+            requestPreview={requestPreview}
+            newToggleArticlePublic={newToggleArticlePublic} />);
     });
 
     describe('layout', () => {
@@ -91,6 +95,10 @@ describe('<CreateArticleComponent />', () => {
             wrapper.find(CardActions).find({ label: 'Preview' }).should.have.length(1);
         });
 
+        it('should contain a public toggle ArticlePublicToggleComponent', () => {
+            wrapper.find(ArticlePublicToggleComponent).should.have.length(1);
+        });
+
         it('should contain MarkdownPreviewComponent', () => {
             wrapper.find(MarkdownPreviewComponent).should.have.length(1);
         });
@@ -116,7 +124,8 @@ describe('<CreateArticleComponent />', () => {
                 newKeyArticleSummary={newKeyArticleSummary}
                 newKeyArticleContent={newKeyArticleContent}
                 newKeyArticleImg={newKeyArticleImg}
-                requestPreview={requestPreview} />);
+                requestPreview={requestPreview}
+                newToggleArticlePublic={newToggleArticlePublic} />);
         });
 
         it('should save the article when the "Save" button is clicked', () => {

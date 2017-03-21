@@ -3,12 +3,13 @@ import FlatButton from 'material-ui/FlatButton';
 import * as React from 'react';
 import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
 import { Article } from '../../landing/landing.state';
-import { newKeyArticleImg } from '../article-editor.actions';
+import { newKeyArticleImg, newToggleArticlePublic } from '../article-editor.actions';
 import { ArticleEditorState } from '../article-editor.state';
 import { MarkdownPreviewComponent } from '../preview/markdown-preview.component';
 import { ArticleContentInputComponent } from './form/article-content-input.component';
 import { ArticleImgInputComponent } from './form/article-img-input.component';
 import { ArticleNameInputComponent } from './form/article-name-input.component';
+import { ArticlePublicToggleComponent } from './form/article-public-toggle.component';
 import { ArticleSummaryInputComponent } from './form/article-summary.component';
 
 interface Props {
@@ -19,6 +20,7 @@ interface Props {
     newKeyArticleContent(character: string);
     newKeyArticleImg(character: string);
     requestPreview(markdown: string);
+    newToggleArticlePublic();
 }
 
 export class CreateArticleComponent extends React.Component<Props, any> {
@@ -51,6 +53,11 @@ export class CreateArticleComponent extends React.Component<Props, any> {
                                     newKeyArticleSummary={this.props.newKeyArticleSummary} />
                                 <ArticleImgInputComponent articleEditor={this.props.articleEditor}
                                     newKeyArticleImg={this.props.newKeyArticleImg} />
+                                <br />
+                                <br />
+                                <ArticlePublicToggleComponent articleEditor={this.props.articleEditor}
+                                    newToggleArticlePublic={this.props.newToggleArticlePublic} />
+                                <br />
                                 <ArticleContentInputComponent articleEditor={this.props.articleEditor}
                                     newKeyArticleContent={this.props.newKeyArticleContent} />
                             </CardText>
