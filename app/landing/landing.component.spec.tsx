@@ -3,6 +3,7 @@ import * as React from 'react';
 import { spy } from 'sinon';
 import { LandingComponent } from './landing.component';
 import { AboutCardComponent } from './about/about-card.component';
+import { NewestArticlesComponent } from './newest-articles/newest-articles.component';
 
 describe('<LandingComponent />', () => {
 
@@ -19,6 +20,10 @@ describe('<LandingComponent />', () => {
 
     it('should contain a AboutCardComponent', () => {
         wrapper.find(AboutCardComponent).should.have.length(1);
+    });
+
+    it('should display a list of newest articles', () => {
+        wrapper.find(NewestArticlesComponent).should.have.length(1);
     });
 
 });

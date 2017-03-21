@@ -22,7 +22,7 @@ const LandingContainer: React.StatelessComponent<Props> = (props) => {
 
 function mapStateToProps(state, ownProps) {
   return {
-    todo: state.todo
+    landing: state.landing
   };
 }
 

@@ -2,10 +2,7 @@
 import AutoComplete from 'material-ui/AutoComplete';
 import * as React from 'react';
 
-interface Props {
-}
-
-export class WidgetSearch extends React.Component<Props, any> {
+export class WidgetSearch extends React.Component<any, any> {
 
   constructor(props, context) {
     super(props, context);

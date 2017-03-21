@@ -2,6 +2,8 @@ let webpack = require('webpack');
 let merge = require('webpack-merge');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let baseConfig = require('./webpack.config.base');
+let WriteFilePlugin = require('write-file-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const port = process.env.PORT || 3000;
 
@@ -23,23 +25,20 @@ module.exports = merge(baseConfig, {
     rules: [
       {
         test: /\.global\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?sourceMap'
-        ]
+        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
       },
-
       {
         test: /^((?!\.global).)*\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-        ]
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader?modules&importLoaders=1&localIdentName=[local]'
+        })
       }
     ]
   },
 
   plugins: [
+    new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({

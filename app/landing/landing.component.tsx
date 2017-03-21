@@ -1,8 +1,10 @@
 import { Card, CardText } from 'material-ui/Card';
 import * as React from 'react';
+import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
 import { LoadingComponent } from '../common/loading.component';
 import { AboutCardComponent } from './about/about-card.component';
 import { LandingState } from './landing.state';
+import { NewestArticlesComponent } from './newest-articles/newest-articles.component';
 
 interface Props {
   landing: LandingState;
@@ -15,15 +17,22 @@ export class LandingComponent extends React.Component<Props, any> {
     super(props, context);
   }
 
-  componentDidMount() {
-    this.props.fetchNewestArticles();
-  }
-
   render() {
     return (
-      <div>
-        <AboutCardComponent />
-      </div>
+      <Grid fluid>
+        <Row>
+          <Col xs={12} sm={12} md={12}>
+            <AboutCardComponent />
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} sm={12} md={12}>
+            <NewestArticlesComponent landing={this.props.landing} fetchNewestArticles={this.props.fetchNewestArticles} />
+
+            <br />
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
