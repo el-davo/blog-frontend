@@ -52,7 +52,7 @@ describe('Articles Service', () => {
 
             jsonSpy.calledOnce.should.be.true();
 
-            jsonSpy.calledWith('/articles').should.be.true();
+            jsonSpy.calledWith('/articles?filter={"where": {"public": true}}').should.be.true();
         });
     });
 

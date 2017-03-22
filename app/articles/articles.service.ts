@@ -12,7 +12,7 @@ export class ArticlesService {
     }
 
     fetchArticles(): Promise<Article[]> {
-        return this.httpService.json<Article[]>('/articles');
+        return this.httpService.json<Article[]>('/articles?filter={"where": {"public": true}}');
     }
 
     fetchArticle(articleId: string): Promise<Article> {

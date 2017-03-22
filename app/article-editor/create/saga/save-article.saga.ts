@@ -12,6 +12,8 @@ function* fetch({article}) {
     try {
         const admin: AdminState = yield select((state: any) => state.admin);
 
+        article.userId = admin.auth.userId;
+
         const articlesService = new ArticlesService();
 
         const savedArticle: Article = yield call(articlesService.saveArticle.bind(articlesService), article, admin.auth.id);

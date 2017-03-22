@@ -4,6 +4,7 @@ export const articleViewer: ArticleViewerState = {
     isFetchingArticle: false,
     article: {
         id: '',
+        userId: '',
         name: '',
         summary: '',
         content: '',

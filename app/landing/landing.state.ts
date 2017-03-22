@@ -10,6 +10,7 @@ export interface LandingState {
 
 export interface Article {
     id: string;
+    userId: string;
     name: string;
     summary: string;
     content: string;
