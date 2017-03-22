@@ -1,0 +1,1 @@
+export const NAVIGATE_TO_ROUTE = 'NAVIGATE_TO_ROUTE';
