@@ -34,4 +34,8 @@ export class ArticlesService {
     deleteArticle(article: Article, authorization: string): Promise<Number> {
         return this.httpService.delete(`/articles/${article.id}`, { authorization });
     }
+
+    fetchPendingArticles(): Promise<Article[]> {
+        return this.httpService.json<Article[]>('/articles?filter={"where": {"public": false}}');
+    }
 }

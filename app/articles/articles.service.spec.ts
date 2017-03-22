@@ -46,7 +46,7 @@ describe('Articles Service', () => {
         });
 
         it('should fetch a list of articles from the server', async () => {
-            let response = await articlesService.fetchArticles();
+            const response = await articlesService.fetchArticles();
 
             response.should.eql(ARTICLES);
 
@@ -224,5 +224,38 @@ describe('Articles Service', () => {
             deleteSpy.calledWith(`/articles/${ARTICLES[0].id}`, { authorization: 'abc123' }).should.be.true();
         });
 
+    });
+
+    describe('fetch pending articles', () => {
+
+        beforeEach(() => {
+            jsonSpy = spy();
+
+            class HttpService {
+                json(path: string) {
+                    jsonSpy(path);
+                    return Promise.resolve(ARTICLES);
+                }
+            }
+
+            const {ArticlesService} = load('./articles.service', {
+                '../common/http.service': {
+                    HttpService
+                }
+            });
+
+            articlesService = new ArticlesService();
+
+        });
+
+        it('should fetch a list of pending articles from the server', async () => {
+            const response = await articlesService.fetchPendingArticles();
+
+            response.should.eql(ARTICLES);
+
+            jsonSpy.calledOnce.should.be.true();
+
+            jsonSpy.calledWith('/articles?filter={"where": {"public": false}}').should.be.true();
+        });
     });
 });

@@ -1,3 +1,4 @@
+import { navigateToRoute } from './admin-options.actions';
 import { closeLogoutDialog, openLogoutDialog } from '../../../../admin/admin.actions';
 import { mount, shallow } from 'enzyme';
 import * as React from 'react';
@@ -5,7 +6,7 @@ import { spy } from 'sinon';
 import { WidgetAdminComponent } from './widget-admin.component';
 import { admin, AdminState } from '../../../../admin/admin.state';
 import { LoginComponent } from './login.component';
-import { LogoutComponent } from './logout.component';
+import { AdminOptionsComponent } from './admin-options.component';
 
 describe('<WidgetAdminComponent />', () => {
 
@@ -19,6 +20,7 @@ describe('<WidgetAdminComponent />', () => {
     let requestLogout;
     let keyUsername;
     let keyPassword;
+    let navigateToRoute;
 
     beforeEach(() => {
         openLoginDialog = spy();
@@ -29,6 +31,7 @@ describe('<WidgetAdminComponent />', () => {
         requestLogout = spy();
         keyUsername = spy();
         keyPassword = spy();
+        navigateToRoute = spy();
 
         loggedInWrapper = shallow(<WidgetAdminComponent
             admin={{ isLoggedIn: true } as AdminState}
@@ -39,7 +42,8 @@ describe('<WidgetAdminComponent />', () => {
             requestLogin={requestLogin}
             requestLogout={requestLogout}
             keyUsername={keyUsername}
-            keyPassword={keyPassword} />);
+            keyPassword={keyPassword}
+            navigateToRoute={navigateToRoute} />);
 
         loggedOutWrapper = shallow(<WidgetAdminComponent
             admin={{ isLoggedIn: false } as AdminState}
@@ -50,7 +54,8 @@ describe('<WidgetAdminComponent />', () => {
             requestLogin={requestLogin}
             requestLogout={requestLogout}
             keyUsername={keyUsername}
-            keyPassword={keyPassword} />);
+            keyPassword={keyPassword}
+            navigateToRoute={navigateToRoute} />);
     });
 
     describe('layout', () => {
@@ -63,12 +68,12 @@ describe('<WidgetAdminComponent />', () => {
             loggedInWrapper.find(LoginComponent).should.have.length(0);
         });
 
-        it('should not contain LoginComponent when the user is logged out', () => {
-            loggedOutWrapper.find(LogoutComponent).should.have.length(0);
+        it('should not contain AdminOptionsComponent when the user is logged out', () => {
+            loggedOutWrapper.find(AdminOptionsComponent).should.have.length(0);
         });
 
-        it('should contain a LogoutComponent when the user is logged in', () => {
-            loggedInWrapper.find(LogoutComponent).should.have.length(1);
+        it('should contain a AdminOptionsComponent when the user is logged in', () => {
+            loggedInWrapper.find(AdminOptionsComponent).should.have.length(1);
         });
 
     });

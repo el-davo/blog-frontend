@@ -4,6 +4,7 @@ import CreateArticleContainer from './article-editor/create/create-article.conta
 import EditArticleContainer from './article-editor/edit/edit-article.container';
 import ArticleviewerContainer from './article-viewer/article-viewer.container';
 import LandingContainer from './landing/landing.container';
+import PendingArticlesContainer from './pending-articles/pending-articles.container';
 
 export const routes = (
 	<Router history={browserHistory}>
@@ -20,6 +21,7 @@ export const routes = (
 				</Route>
 			</Route>
 			<Route name="Create Article" path="create" component={CreateArticleContainer} />
+			<Route name="Pending Articles" path="pending" component={PendingArticlesContainer} />
 		</Route>
 	</Router>
 );

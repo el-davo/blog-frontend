@@ -21,7 +21,8 @@ describe('<WidgetAdminContainer />', () => {
             requestLogin: spy(),
             requestLogout: spy(),
             keyUsername: spy(),
-            keyPassword: spy()
+            keyPassword: spy(),
+            navigateToRoute: spy()
         }
 
         wrapper = shallow(<WidgetAdminContainer

@@ -8,7 +8,9 @@ import { editArticleSaga } from './article-editor/edit/saga/edit-article.saga';
 import { fetchEditArticleSaga } from './article-editor/edit/saga/fetch-edit-article.saga';
 import { editingRequestPreviewSaga } from './article-editor/edit/saga/fetch-preview.saga';
 import { fetchArticleSaga } from './article-viewer/saga/fetch-article.saga';
+import { navigateToSaga } from './common/navbar/widgets/admin/saga/navigate-to.saga';
 import { fetchNewestArticlesSaga } from './landing/saga/fetch-newest-articles.saga';
+import { fetchPendingArticlesSaga } from './pending-articles/saga/fetch-pending-articles.saga';
 
 export function* rootSaga() {
   yield [
@@ -21,6 +23,8 @@ export function* rootSaga() {
     fork(adminLogoutSaga),
     fork(requestPreviewSaga),
     fork(editingRequestPreviewSaga),
-    fork(deleteArticleSaga)
+    fork(deleteArticleSaga),
+    fork(fetchPendingArticlesSaga),
+    fork(navigateToSaga)
   ];
 }

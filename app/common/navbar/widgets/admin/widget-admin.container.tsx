@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../../../../admin/admin.actions';
+import * as adminActions from '../../../../admin/admin.actions';
 import { AdminState } from '../../../../admin/admin.state';
+import * as adminOptionsActions from './admin-options.actions';
+import { navigateToRoute } from './admin-options.actions';
 import { WidgetAdminComponent } from './widget-admin.component';
 
 interface Props {
@@ -19,6 +21,7 @@ interface Actions {
     requestLogout();
     keyUsername(character: string);
     keyPassword(character: string);
+    navigateToRoute(route: string);
 }
 
 export const WidgetAdminContainer: React.StatelessComponent<Props> = (props) => {
@@ -32,7 +35,8 @@ export const WidgetAdminContainer: React.StatelessComponent<Props> = (props) => 
             requestLogin={props.actions.requestLogin}
             requestLogout={props.actions.requestLogout}
             keyUsername={props.actions.keyUsername}
-            keyPassword={props.actions.keyPassword} />
+            keyPassword={props.actions.keyPassword}
+            navigateToRoute={props.actions.navigateToRoute} />
     );
 };
 
@@ -44,7 +48,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators({ ...actions }, dispatch)
+        actions: bindActionCreators({ ...adminActions, ...adminOptionsActions }, dispatch)
     };
 }
 

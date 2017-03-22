@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { admin, AdminState } from '../../../../admin/admin.state';
+import { AdminOptionsComponent } from './admin-options.component';
 import { LoginComponent } from './login.component';
-import { LogoutComponent } from './logout.component';
 
 interface Props {
     admin: AdminState;
@@ -13,6 +13,7 @@ interface Props {
     requestLogout();
     keyUsername(character: string);
     keyPassword(character: string);
+    navigateToRoute(route: string);
 }
 
 export class WidgetAdminComponent extends React.Component<Props, any> {
@@ -34,11 +35,12 @@ export class WidgetAdminComponent extends React.Component<Props, any> {
                             keyUsername={this.props.keyUsername}
                             keyPassword={this.props.keyPassword} />
                     ) : (
-                            <LogoutComponent
+                            <AdminOptionsComponent
                                 admin={this.props.admin}
                                 openLogoutDialog={this.props.openLogoutDialog}
                                 closeLogoutDialog={this.props.closeLogoutDialog}
-                                requestLogout={this.props.requestLogout} />
+                                requestLogout={this.props.requestLogout}
+                                navigateToRoute={this.props.navigateToRoute} />
                         )
                 }
             </div>
