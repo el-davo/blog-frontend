@@ -25,7 +25,7 @@ module.exports = merge(baseConfig, {
     rules: [
       {
         test: /\.global\.css$/,
-        loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+        loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
       },
       {
         test: /^((?!\.global).)*\.css$/,
@@ -38,13 +38,13 @@ module.exports = merge(baseConfig, {
   },
 
   plugins: [
-    new ExtractTextPlugin({ filename: 'style.css', allChunks: true }),
+    new ExtractTextPlugin({filename: 'style.css', allChunks: true}),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
     }),
-    new HtmlWebpackPlugin({ template: 'index.ejs' })
+    new HtmlWebpackPlugin({template: 'index.ejs'})
   ]
 
 });

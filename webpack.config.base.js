@@ -1,5 +1,5 @@
 let path = require('path');
-let { CheckerPlugin } = require('awesome-typescript-loader');
+let {CheckerPlugin} = require('awesome-typescript-loader');
 
 module.exports = {
   module: {
@@ -39,6 +39,5 @@ module.exports = {
     new CheckerPlugin()
   ],
 
-  externals: [
-  ]
+  externals: []
 };
