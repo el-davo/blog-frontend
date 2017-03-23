@@ -1,4 +1,4 @@
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import * as React from 'react';
 import { spy } from 'sinon';
 import { LandingComponent } from './landing.component';
@@ -27,4 +27,3 @@ describe('<LandingComponent />', () => {
     });
 
 });
-

@@ -18,7 +18,7 @@ describe('<EditArticleContainer />', () => {
             editKeyArticleName: spy(),
             editKeyArticleSummary: spy(),
             editKeyArticleContent: spy()
-        }
+        };
 
         const articleEditor = {
 

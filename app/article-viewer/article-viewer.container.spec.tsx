@@ -14,7 +14,7 @@ describe('<ArticleViewerContainer />', () => {
     beforeEach(() => {
         actions = {
             fetchViewArticle: spy()
-        }
+        };
         const articleViewer = {
             isFetchingArticle: false, article: {
                 name: 'testName',

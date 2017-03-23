@@ -23,7 +23,7 @@ describe('<WidgetAdminContainer />', () => {
             keyUsername: spy(),
             keyPassword: spy(),
             navigateToRoute: spy()
-        }
+        };
 
         wrapper = shallow(<WidgetAdminContainer
             admin={admin}

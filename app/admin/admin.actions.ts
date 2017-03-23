@@ -1,4 +1,3 @@
-import { types } from 'react-markdown';
 import { Article } from '../landing/landing.state';
 import {
     CLOSE_LOGIN_DIALOG, CLOSE_LOGOUT_DIALOG, DELETE_ARTICLE_FAILED,

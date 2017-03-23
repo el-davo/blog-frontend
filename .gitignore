@@ -6,3 +6,4 @@ test_results/
 
 yarn-error.log
 npm-debug.log
+.awcache

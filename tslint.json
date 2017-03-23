@@ -29,6 +29,7 @@
       true,
       "ban-keywords"
     ],
-    "member-access": false
+    "member-access": false,
+    "ordered-imports": false
   }
 }

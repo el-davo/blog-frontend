@@ -25,7 +25,17 @@ export class AboutCardComponent extends React.Component<any, any> {
                 <Card>
                     <CardTitle title="About el-davo" />
                     <CardText>
-                        This may come as a surprise to you but my real name is in fact not el-davo. The names David Ahern however you can call me Dave for short. Before we go any further I should point out that you are infact correct, that is a dog wearing a little jumper in the image above. Now whats this site all about? Well ive been a software engineer for the last 5 years, in that time ive worked with many technologies, so i thought it was about time I start sharing some of my knowledge in the hope it might help some young up and coming software developers. My current main two languages of choice are Javascript and Java. This website is built with react for the frontend and nodejs for the backend. You will find some articles that might interest you below, thanks for stopping by and if you want to get in touch please feel free to contact me on LinkedIn or Github
+                        This may come as a surprise to you but my real name is in fact not el-davo. 
+                        The names David Ahern however you can call me Dave for short. 
+                        Before we go any further I should point out that you are infact correct, 
+                        that is a dog wearing a little jumper in the image above. 
+                        Now whats this site all about? Well ive been a software engineer for the last 5 years, 
+                        in that time ive worked with many technologies, 
+                        so i thought it was about time I start sharing some of my knowledge in the hope it might help some 
+                        young up and coming software developers. My current main two languages of choice are 
+                        Javascript and Java. This website is built with react for the frontend and nodejs for the backend. 
+                        You will find some articles that might interest you below, thanks for stopping by and if you want to 
+                        get in touch please feel free to contact me on LinkedIn or Github
                     </CardText>
                     <CardActions>
                         <FlatButton

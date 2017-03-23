@@ -62,7 +62,7 @@ describe('Article Editor Actions', () => {
     describe('fetchEditArticle()', () => {
 
         it('should fetch the article to edit', () => {
-            let articleId = 'abc123';
+            const articleId = 'abc123';
             fetchEditArticle(articleId).should.eql({ type: FETCH_EDIT_ARTICLE, articleId });
         });
     });
@@ -86,7 +86,7 @@ describe('Article Editor Actions', () => {
     describe('editArticleSaved()', () => {
 
         it('should alert the user that the edited article was saved', () => {
-            editArticleSaved().should.eql({ type: EDIT_ARTICLE_SAVED });;
+            editArticleSaved().should.eql({ type: EDIT_ARTICLE_SAVED }); ;
         });
     });
 
@@ -134,7 +134,7 @@ describe('Article Editor Actions', () => {
         it('should add new character to the editing article name', () => {
             const character = 'a';
             editKeyArticleName(character).should.eql({ type: EDIT_KEY_ARTICLE_NAME, character });
-        })
+        });
     });
 
     describe('editKeyArticleSummary()', () => {
@@ -142,7 +142,7 @@ describe('Article Editor Actions', () => {
         it('should add new character to the editing article summary', () => {
             const character = 'a';
             editKeyArticleSummary(character).should.eql({ type: EDIT_KEY_ARTICLE_SUMMARY, character });
-        })
+        });
     });
 
     describe('editKeyArticleContent()', () => {
@@ -150,7 +150,7 @@ describe('Article Editor Actions', () => {
         it('should add new character to the editing article content', () => {
             const character = 'a';
             editKeyArticleContent(character).should.eql({ type: EDIT_KEY_ARTICLE_CONTENT, character });
-        })
+        });
     });
 
     describe('editKeyArticleImg()', () => {

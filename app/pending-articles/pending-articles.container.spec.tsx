@@ -1,4 +1,3 @@
-import { fetchPendingArticles } from './pending-articles.actions';
 import * as React from 'react';
 import { spy } from 'sinon';
 import { shallow } from 'enzyme';
@@ -20,7 +19,7 @@ describe('<PendingArticlesContainer />', () => {
 
         const actions = {
             fetchPendingArticles: spy()
-        }
+        };
         wrapper = shallow(<PendingArticlesContainer pendingArticles={pendingArticles} actions={actions} />);
     });
 

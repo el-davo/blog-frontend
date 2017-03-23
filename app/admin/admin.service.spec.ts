@@ -29,7 +29,7 @@ describe('AdminService', () => {
     describe('login()', () => {
 
         it('should login to the blog', async () => {
-            let response: Auth = await adminService.login('username', 'password');
+            const response: Auth = await adminService.login('username', 'password');
 
             response.id.should.eql('abc123');
 
