@@ -18,7 +18,8 @@ describe('<PendingArticlesContainer />', () => {
         } as PendingArticlesState;
 
         const actions = {
-            fetchPendingArticles: spy()
+            fetchPendingArticles: spy(),
+            showDeleteArticleModal: spy()
         };
         wrapper = shallow(<PendingArticlesContainer pendingArticles={pendingArticles} actions={actions} />);
     });

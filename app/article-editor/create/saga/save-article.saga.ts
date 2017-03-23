@@ -1,6 +1,6 @@
 import { toastr } from 'react-redux-toastr';
 import { takeEvery } from 'redux-saga';
-import { apply, call, put, select } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 import { AdminState } from '../../../admin/admin.state';
 import { ArticlesService } from '../../../articles/articles.service';
 import { navigateToRoute } from '../../../common/navbar/widgets/admin/admin-options.actions';
@@ -24,7 +24,7 @@ function* fetch({article}) {
 
         yield put(addArticleSaved());
     } catch (err) {
-        toastr.error('Error', 'An error occured creating new article');
+        toastr.error('Error', 'An error occurred creating new article');
 
         yield put(addArticleFailed());
     }

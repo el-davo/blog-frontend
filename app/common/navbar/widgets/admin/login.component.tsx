@@ -3,6 +3,7 @@ import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import IconLogin from 'material-ui/svg-icons/action/face';
 import TextField from 'material-ui/TextField';
+import {fullWhite} from 'material-ui/styles/colors';
 import * as React from 'react';
 import {AdminState} from '../../../../admin/admin.state';
 
@@ -60,9 +61,10 @@ export class LoginComponent extends React.Component<Props, any> {
     return (
       <div>
         <IconButton tooltip="Admin Login"
+                    tooltipPosition="bottom-left"
                     touch={true}
                     onClick={this._openLoginDialog}>
-          <IconLogin />
+          <IconLogin color={fullWhite}/>
         </IconButton>
         <Dialog
           title="Admin Login"

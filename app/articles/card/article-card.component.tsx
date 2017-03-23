@@ -1,10 +1,8 @@
-import { Card, CardActions, CardHeader, CardMedia, CardText, CardTitle } from 'material-ui/Card';
+import { Card, CardActions, CardMedia, CardTitle } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import * as React from 'react';
 import { Link } from 'react-router';
-import { requestDeleteArticle, showDeleteArticleModal } from '../../admin/admin.actions';
 import { AdminState } from '../../admin/admin.state';
-import { LoadingComponent } from '../../common/loading.component';
 import { Article } from '../../landing/landing.state';
 
 const style = {
