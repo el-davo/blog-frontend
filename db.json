@@ -26,22 +26,6 @@
       "parsedContent": "Test 3 description",
       "imgUrl": "http://www.devacron.com/wp-content/uploads/2016/02/ES6-ecmascript6-logo-300x192.jpg",
       "public": true
-    },
-    {
-      "name": "dfgh",
-      "summary": "dfgh",
-      "content": "dfghdfgh",
-      "imgUrl": "dghdfgh",
-      "userId": "6be5b25b-b527-4d25-9c1a-1856dd241204",
-      "id": "ByEUwBlnl"
-    },
-    {
-      "name": "cgh",
-      "summary": "dfgh",
-      "content": "dfghdfgh",
-      "imgUrl": "dfghdfg",
-      "userId": "6be5b25b-b527-4d25-9c1a-1856dd241204",
-      "id": "ByhwPSehg"
     }
   ]
 }

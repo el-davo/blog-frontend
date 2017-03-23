@@ -10,7 +10,8 @@
     "build": "webpack --config webpack.config.prod.js",
     "lint": "tslint app/**/*.ts*",
     "lint:fix": "npm run lint -- --fix",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "prod": "http-server -o"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +39,7 @@
     "faker": "^4.1.0",
     "fetch-mock": "^5.9.4",
     "html-webpack-plugin": "^2.28.0",
+    "http-server": "^0.9.0",
     "ignore-styles": "^5.0.1",
     "jsdom": "^9.11.0",
     "json-loader": "^0.5.4",
