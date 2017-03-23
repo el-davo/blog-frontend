@@ -1,5 +1,3 @@
-import { ReactMarkdownProps } from 'react-markdown';
-import { fetchArticleSaga } from '../article-viewer/saga/fetch-article.saga';
 import { Article } from '../landing/landing.state';
 import {
     ADD_ARTICLE, ADD_ARTICLE_FAILED, ADD_ARTICLE_SAVED, EDIT_ARTICLE,
