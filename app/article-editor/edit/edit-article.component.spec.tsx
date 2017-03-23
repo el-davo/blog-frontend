@@ -123,7 +123,7 @@ describe('<EditArticleComponent />', () => {
                 editKeyArticleImg={editKeyArticleImg}
                 editKeyArticleContent={editKeyArticleContent}
                 editToggleArticlePublic={editToggleArticlePublic}
-                editingRequestPreview={editingRequestPreview} /></MuiThemeProvider>)
+                editingRequestPreview={editingRequestPreview} /></MuiThemeProvider>);
         });
 
         it('should fetch the editing article when the component mounts', () => {

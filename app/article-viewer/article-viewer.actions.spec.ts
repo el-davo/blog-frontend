@@ -7,7 +7,7 @@ describe('Article Viewer Actions', () => {
     describe('fetchViewArticle()', () => {
 
         it('should fetch an article', () => {
-            let articleId = 'abc123';
+            const articleId = 'abc123';
             fetchViewArticle(articleId).should.eql({ type: FETCH_VIEW_ARTICLE, articleId });
         });
     });
@@ -15,7 +15,7 @@ describe('Article Viewer Actions', () => {
     describe('updateViewArticle()', () => {
 
         it('should update an article', () => {
-            let article = { name: 'name', summary: 'summary', content: 'content' } as Article;
+            const article = { name: 'name', summary: 'summary', content: 'content' } as Article;
             updateViewArticle(article).should.eql({ type: UPDATE_VIEW_ARTICLE, article });
         });
     });

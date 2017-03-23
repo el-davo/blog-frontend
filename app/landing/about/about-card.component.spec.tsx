@@ -49,6 +49,6 @@ describe('<AboutCardComponent />', () => {
             wrapper.find(CardActions).find({ label: 'Github' }).should.have.length(1);
         });
 
-    })
+    });
 
 });

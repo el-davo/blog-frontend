@@ -5,16 +5,16 @@ describe('HTTP Service', () => {
 
     const ARTICLES = [
         {
-            "id": "1",
-            "name": "Test 1 name",
-            "content": "Test 1 description"
+            id: '1',
+            name: 'Test 1 name',
+            content: 'Test 1 description'
         },
         {
-            "id": "2",
-            "name": "Test 2 name",
-            "content": "Test 2 description"
+            id: '2',
+            name: 'Test 2 name',
+            content: 'Test 2 description'
         }
-    ]
+    ];
 
     let httpService;
 

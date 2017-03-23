@@ -8,12 +8,11 @@ import IconButton from 'material-ui/IconButton';
 import IconLogin from 'material-ui/svg-icons/action/face';
 import TextField from 'material-ui/TextField';
 import { LoginComponent } from './login.component';
-import { admin, AdminState } from '../../../../admin/admin.state';
+import { AdminState } from '../../../../admin/admin.state';
 
 describe('<LoginComponent />', () => {
 
     let wrapper;
-    let mountedWrapper;
     let openLoginDialog;
     let closeLoginDialog;
     let requestLogin;

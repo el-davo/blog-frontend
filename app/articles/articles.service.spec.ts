@@ -6,16 +6,16 @@ describe('Articles Service', () => {
 
     const ARTICLES = [
         {
-            "id": "a1",
-            "name": "Test 1 name",
-            "content": "Test 1 content"
+            id: 'a1',
+            name: 'Test 1 name',
+            content: 'Test 1 content'
         },
         {
-            "id": "a2",
-            "name": "Test 2 name",
-            "content": "Test 2 content"
+            id: 'a2',
+            name: 'Test 2 name',
+            content: 'Test 2 content'
         }
-    ]
+    ];
 
     let jsonSpy;
     let postSpy;
@@ -79,7 +79,7 @@ describe('Articles Service', () => {
         });
 
         it('should fetch a specific article', async () => {
-            let response = await articlesService.fetchArticle('abc123');
+            const response = await articlesService.fetchArticle('abc123');
 
             response.should.eql(ARTICLES[0]);
 

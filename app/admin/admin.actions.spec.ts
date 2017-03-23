@@ -33,8 +33,8 @@ describe('Admin Actions', () => {
     describe('requestLogin()', () => {
 
         it('should request that the user be logged in', () => {
-            let username = 'username';
-            let password = 'password';
+            const username = 'username';
+            const password = 'password';
             requestLogin(username, password).should.eql({ type: REQUEST_LOGIN, username, password });
         });
     });
@@ -42,7 +42,7 @@ describe('Admin Actions', () => {
     describe('loginSuccess()', () => {
 
         it('should let the user know they are logged in', () => {
-            let auth = { id: 'abc123', userId: 'abc123' } as Auth;
+            const auth = { id: 'abc123', userId: 'abc123' } as Auth;
             loginSuccess(auth).should.eql({ type: LOGIN_SUCCESS, auth });
         });
     });
