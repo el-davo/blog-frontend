@@ -27,7 +27,7 @@ export class BreadcrumbComponent extends React.Component<Props, any> {
             <Breadcrumbs
               routes={this.props.routes}
               params={this.props.params}
-              excludes={['Edit']}
+              excludes={['Edit', 'All Articles']}
               displayMissing={false}
             />
           </Col>
