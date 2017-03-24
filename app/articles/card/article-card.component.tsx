@@ -34,7 +34,7 @@ export class ArticleCardComponent extends React.Component<Props, any> {
                 <Link to={`/articles/${this.props.article.id}`}>
                     <CardMedia
                         overlay={<CardTitle title={this.props.article.name} subtitle={this.props.article.summary} />}>
-                        <img src={this.props.article.imgUrl} />
+                        <img src={this.props.article.imgUrl} style={{minHeight: 200}}/>
                     </CardMedia>
                 </Link>
                 {

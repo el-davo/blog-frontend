@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import { PendingArticlesContainer } from './pending-articles.container';
 import { PendingArticlesState } from './pending-articles.state';
 import { PendingArticlesComponent } from './pending-articles.component';
+import { BreadcrumbComponent } from '../common/breadcrumb/breadcrumb.component';
 
 describe('<PendingArticlesContainer />', () => {
 
@@ -16,18 +17,26 @@ describe('<PendingArticlesContainer />', () => {
                 { name: 'testName2', summary: 'testSummary2', imgUrl: 'http://localhost/img2.png' }
             ]
         } as PendingArticlesState;
-
+        const routes = {};
         const actions = {
             fetchPendingArticles: spy(),
             showDeleteArticleModal: spy()
         };
-        wrapper = shallow(<PendingArticlesContainer pendingArticles={pendingArticles} actions={actions} />);
+
+        wrapper = shallow(<PendingArticlesContainer
+            routes={routes}
+            pendingArticles={pendingArticles}
+            actions={actions} />);
     });
 
     describe('layout', () => {
 
         it('should contain PendingArticlesComponent', () => {
             wrapper.find(PendingArticlesComponent).should.have.length(1);
+        });
+
+        it('should contain a BreadcrumbComponent', () => {
+            wrapper.find(BreadcrumbComponent).should.have.length(1);
         });
     });
 

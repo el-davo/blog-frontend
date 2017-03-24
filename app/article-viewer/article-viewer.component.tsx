@@ -40,6 +40,7 @@ export class ArticleViewerComponent extends React.Component<Props, any> {
                                 )
                         }
                     </Col>
+                    <br />
                 </Row>
             </Grid>
         );
