@@ -27,7 +27,8 @@ const ICON_SIZE = 20;
 
 const style = {
   wrapper: {
-    margin: 5
+    margin: 5,
+    cursor: 'pointer'
   }
 };
 
