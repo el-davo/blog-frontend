@@ -30,6 +30,7 @@ export class LandingComponent extends React.Component<Props, any> {
             <NewestArticlesComponent landing={this.props.landing} fetchNewestArticles={this.props.fetchNewestArticles} />
 
             <br />
+            <br />
           </Col>
         </Row>
       </Grid>

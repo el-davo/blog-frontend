@@ -29,27 +29,32 @@ export class ArticleViewerComponent extends React.Component<Props, any> {
           <Col xs={12} sm={12} md={12}>
             {
               !this.props.articleViewer.isFetchingArticle ? (
-                  <Card>
-                    <CardHeader
-                      title={this.props.articleViewer.article.name}
-                      avatar={this.props.articleViewer.article.imgUrl}
-                      subtitle={<Time value={this.props.articleViewer.article.modified} format="DD-MM-YYYY" />}/>
-                    <CardText>
-                      <div dangerouslySetInnerHTML={{ __html: this.props.articleViewer.article.parsedContent }}></div>
+                  <div>
+                    <Card>
+                      <CardHeader
+                        title={this.props.articleViewer.article.name}
+                        avatar={this.props.articleViewer.article.imgUrl}
+                        subtitle={<Time value={this.props.articleViewer.article.modified} format="DD-MM-YYYY" />}/>
+                      <CardText>
+                        <div dangerouslySetInnerHTML={{ __html: this.props.articleViewer.article.parsedContent }}></div>
 
-                      <br />
-                      <br />
+                        <br />
+                        <br />
 
-                      <SocialShareComponent article={this.props.articleViewer.article} />
+                        <SocialShareComponent article={this.props.articleViewer.article}/>
 
-                    </CardText>
-                  </Card>
+                      </CardText>
+                    </Card>
+
+                    <br />
+                    <br />
+                  </div>
+
                 ) : (
                   <LoadingComponent />
                 )
             }
           </Col>
-          <br />
         </Row>
       </Grid>
     );
