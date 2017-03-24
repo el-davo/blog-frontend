@@ -4537,6 +4537,10 @@ react-tap-event-plugin@^2.0.1:
   dependencies:
     fbjs "^0.8.6"
 
+react-time@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-time/-/react-time-4.2.0.tgz#805f2d03442f03ad523dddc1a909b0348d3f9aeb"
+
 react@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.2.tgz#41f7991b26185392ba9bae96c8889e7e018397ef"
