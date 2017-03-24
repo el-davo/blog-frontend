@@ -1,9 +1,13 @@
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import { Card, CardActions, CardText } from 'material-ui/Card';
+import { Card, CardText } from 'material-ui/Card';
 import { List, ListItem } from 'material-ui/List';
 import { spy } from 'sinon';
 import Avatar from 'material-ui/Avatar';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import IconButton from 'material-ui/IconButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { PendingArticlesComponent } from './pending-articles.component';
 import { PendingArticlesState } from './pending-articles.state';
@@ -14,6 +18,7 @@ describe('<PendingArticlesComponent />', () => {
     let mounted;
     let pendingArticles;
     let fetchPendingArticles;
+    let showDeleteArticleModal;
 
     beforeEach(() => {
         pendingArticles = {
@@ -23,14 +28,17 @@ describe('<PendingArticlesComponent />', () => {
             ]
         } as PendingArticlesState;
         fetchPendingArticles = spy();
+        showDeleteArticleModal = spy();
 
         wrapper = shallow(<PendingArticlesComponent
             pendingArticles={pendingArticles}
-            fetchPendingArticles={fetchPendingArticles} />);
+            fetchPendingArticles={fetchPendingArticles}
+            showDeleteArticleModal={showDeleteArticleModal}/>);
 
         mounted = mount(<MuiThemeProvider><PendingArticlesComponent
             pendingArticles={pendingArticles}
-            fetchPendingArticles={fetchPendingArticles} /></MuiThemeProvider>);
+            fetchPendingArticles={fetchPendingArticles}
+            showDeleteArticleModal={showDeleteArticleModal}/></MuiThemeProvider>);
     });
 
     describe('layout', () => {
@@ -69,6 +77,7 @@ describe('<PendingArticlesComponent />', () => {
             mounted.find(List).find({ src: 'http://localhost/img1.png' }).should.have.length(1);
             mounted.find(List).find({ src: 'http://localhost/img2.png' }).should.have.length(1);
         });
+
     });
 
     describe('actions', () => {

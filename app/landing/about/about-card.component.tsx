@@ -22,6 +22,9 @@ export class AboutCardComponent extends React.Component<any, any> {
                 <div style={style}>
                     <Avatar src="app/img/el-davo.jpg" size={125} />
                 </div>
+
+                <br />
+
                 <Card>
                     <CardTitle title="About el-davo" />
                     <CardText>

@@ -1,8 +1,7 @@
 import { takeEvery } from 'redux-saga';
-import { apply, call, put, select } from 'redux-saga/effects';
+import { call, put, select } from 'redux-saga/effects';
 import { AdminState } from '../../../admin/admin.state';
 import { ArticlesService } from '../../../articles/articles.service';
-import { Article } from '../../../landing/landing.state';
 import { REQUEST_PREVIEW } from '../../article-editor.action-types';
 import { requestPreviewFailed, updatePreview } from '../../article-editor.actions';
 

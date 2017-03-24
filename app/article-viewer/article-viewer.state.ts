@@ -10,6 +10,7 @@ export const articleViewer: ArticleViewerState = {
         content: '',
         parsedContent: '',
         imgUrl: '',
+        modified: '',
         public: false
     }
 };

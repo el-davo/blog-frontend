@@ -88,20 +88,20 @@ describe('<LogoutComponent />', () => {
     describe('actions', () => {
 
         it('should open the logout dialog when the logout button in the navbar is clicked', () => {
-            wrapper.find(IconMenu).find({ primaryText: 'Logout' }).simulate('click');
+            wrapper.find(IconMenu).find({ primaryText: 'Logout' }).simulate('touchTap');
 
             openLogoutDialog.calledOnce.should.be.true();
         });
 
         it('should navigate to the create article page when the "Create Article" option is clicked', () => {
-            wrapper.find(IconMenu).find({ primaryText: 'Create Article' }).simulate('click');
+            wrapper.find(IconMenu).find({ primaryText: 'Create Article' }).simulate('touchTap');
 
             navigateToRoute.calledOnce.should.be.true();
             navigateToRoute.calledWith('/create').should.be.true();
         });
 
         it('should navigate to the pending articles page when the "View Pending Articles" option is clicked', () => {
-            wrapper.find(IconMenu).find({ primaryText: 'View Pending Articles' }).simulate('click');
+            wrapper.find(IconMenu).find({ primaryText: 'View Pending Articles' }).simulate('touchTap');
 
             navigateToRoute.calledOnce.should.be.true();
             navigateToRoute.calledWith('/pending').should.be.true();

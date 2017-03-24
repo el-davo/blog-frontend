@@ -6,6 +6,7 @@
       "summary": "This is the summary for 1234",
       "content": "# Test 1 description \n* list1\n * list 2 \n ```js \n npm install\n```",
       "parsedContent": "Test 1 description",
+      "modified": "2017-03-24T13:26:16.000Z",
       "imgUrl": "https://angular.io/resources/images/logos/angular2/angular.svg",
       "public": true
     },
@@ -15,6 +16,7 @@
       "summary": "This is the summary for 2 dude",
       "content": "Test 2 description dude",
       "parsedContent": "Test 2 description",
+      "modified": "2017-03-24T13:26:16.000Z",
       "imgUrl": "https://facebook.github.io/react/img/logo.svg",
       "public": false
     },
@@ -24,6 +26,7 @@
       "summary": "This is the summary for 3",
       "content": "Test 3 description",
       "parsedContent": "Test 3 description",
+      "modified": "2017-03-24T13:26:16.000Z",
       "imgUrl": "http://www.devacron.com/wp-content/uploads/2016/02/ES6-ecmascript6-logo-300x192.jpg",
       "public": true
     }
