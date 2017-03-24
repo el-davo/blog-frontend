@@ -4,6 +4,7 @@ import Time from 'react-time';
 import {Col, Grid, Row} from 'react-flexbox-grid/lib/index';
 import {LoadingComponent} from '../common/loading.component';
 import {ArticleViewerState} from './article-viewer.state';
+import {SocialShareComponent} from './social/social-share.component';
 
 interface Props {
   articleId: string;
@@ -35,6 +36,12 @@ export class ArticleViewerComponent extends React.Component<Props, any> {
                       subtitle={<Time value={this.props.articleViewer.article.modified} format="DD-MM-YYYY" />}/>
                     <CardText>
                       <div dangerouslySetInnerHTML={{ __html: this.props.articleViewer.article.parsedContent }}></div>
+
+                      <br />
+                      <br />
+
+                      <SocialShareComponent article={this.props.articleViewer.article} />
+
                     </CardText>
                   </Card>
                 ) : (

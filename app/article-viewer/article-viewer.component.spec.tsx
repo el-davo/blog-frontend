@@ -7,6 +7,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {ArticleViewerComponent} from './article-viewer.component';
 import {ArticleViewerState} from './article-viewer.state';
 import {LoadingComponent} from '../common/loading.component';
+import {SocialShareComponent} from './social/social-share.component';
 
 describe('<ArticleViewerComponent />', () => {
 
@@ -78,6 +79,10 @@ describe('<ArticleViewerComponent />', () => {
         fetchViewArticle={fetchViewArticle}/>);
 
       wrapper.find(LoadingComponent).should.have.length(1);
+    });
+
+    it('should contain SocialShareComponent', () => {
+      wrapper.find(SocialShareComponent).should.have.length(1);
     });
   });
 
