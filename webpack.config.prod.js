@@ -42,6 +42,12 @@ module.exports = merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
+    new BabelPlugin({
+      test: /\.js$/,
+      presets: ['es2015', 'stage-0'],
+      sourceMaps: false,
+      compact: false
+    }),
     new ExtractTextPlugin({filename: 'style-[contenthash].css', allChunks: true}),
     new HtmlWebpackPlugin({template: 'index.ejs'}),
     new webpack.optimize.UglifyJsPlugin({
