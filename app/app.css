@@ -14,3 +14,8 @@ pre {
   background-color: #232323;
   color: white;
 }
+
+pre code {
+  margin: 5px 10px 5px 10px;
+  display: block;
+}
