@@ -1,4 +1,3 @@
-
 import AutoComplete from 'material-ui/AutoComplete';
 import * as React from 'react';
 
@@ -15,9 +14,9 @@ export class WidgetSearch extends React.Component<any, any> {
   render() {
     return (
       <AutoComplete
-          hintText="Search Articles"
-          dataSource={this.state.dataSource}
-        />
+        hintText="Search Articles"
+        dataSource={this.state.dataSource}
+      />
     );
   }
 }

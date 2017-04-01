@@ -1,6 +1,5 @@
 import {Card, CardHeader, CardText} from 'material-ui/Card';
 import * as React from 'react';
-import Time from 'react-time';
 import {Col, Grid, Row} from 'react-flexbox-grid/lib/index';
 import {LoadingComponent} from '../common/loading.component';
 import {ArticleViewerState} from './article-viewer.state';
@@ -33,8 +32,7 @@ export class ArticleViewerComponent extends React.Component<Props, any> {
                     <Card>
                       <CardHeader
                         title={this.props.articleViewer.article.name}
-                        avatar={this.props.articleViewer.article.imgUrl}
-                        subtitle={<Time value={this.props.articleViewer.article.modified} format="DD-MM-YYYY" />}/>
+                        avatar={this.props.articleViewer.article.imgUrl}/>
                       <CardText>
                         <div dangerouslySetInnerHTML={{ __html: this.props.articleViewer.article.parsedContent }}></div>
 

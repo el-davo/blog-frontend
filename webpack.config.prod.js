@@ -6,19 +6,20 @@ let CompressionPlugin = require("compression-webpack-plugin");
 let BabelPlugin = require("babel-webpack-plugin");
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
+let BabiliPlugin = require("babili-webpack-plugin");
 let baseConfig = require('./webpack.config.base');
 
 module.exports = merge(baseConfig, {
   devtool: 'cheap-module-source-map',
 
   entry: [
-    'babel-polyfill',
+    //'babel-polyfill',
     './app/index'
   ],
 
   output: {
     publicPath: './',
-    filename: 'bundle-[chunkhash].js',
+    filename: 'bundle.js',
   },
 
   module: {
@@ -39,17 +40,19 @@ module.exports = merge(baseConfig, {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new CleanWebpackPlugin(['dist'], {}),
+    new BabiliPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new BabelPlugin({
       test: /\.js$/,
-      presets: ['es2015', 'stage-0'],
+      presets: [['es2015', {modules: false}], 'stage-0'],
       sourceMaps: false,
-      compact: false
+      compact: true
     }),
     new ExtractTextPlugin({filename: 'style-[contenthash].css', allChunks: true}),
     new HtmlWebpackPlugin({template: 'index.ejs'}),
+    new BabiliPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         screw_ie8: true,
@@ -66,6 +69,8 @@ module.exports = merge(baseConfig, {
       {from: 'manifest.yml'},
       {from: 'nginx.conf'}
     ], {})
-  ]
+  ],
+
+  devtool: false
 
 });

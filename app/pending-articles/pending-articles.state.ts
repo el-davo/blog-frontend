@@ -1,11 +1,11 @@
-import { Article } from '../landing/landing.state';
+import {Article} from '../landing/landing.state';
 
 export const pendingArticles = {
-    isFetchingPendingArticles: false,
-    pendingArticles: []
+  isFetchingPendingArticles: false,
+  pendingArticles: []
 } as PendingArticlesState;
 
 export interface PendingArticlesState {
-    isFetchingPendingArticles: boolean;
-    pendingArticles: Article[];
+  isFetchingPendingArticles: boolean;
+  pendingArticles: Article[];
 }

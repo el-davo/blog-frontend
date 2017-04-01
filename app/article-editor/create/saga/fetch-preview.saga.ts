@@ -1,24 +1,24 @@
-import { takeEvery } from 'redux-saga';
-import { call, put, select } from 'redux-saga/effects';
-import { AdminState } from '../../../admin/admin.state';
-import { ArticlesService } from '../../../articles/articles.service';
-import { REQUEST_PREVIEW } from '../../article-editor.action-types';
-import { requestPreviewFailed, updatePreview } from '../../article-editor.actions';
+import {takeEvery} from 'redux-saga';
+import {call, put, select} from 'redux-saga/effects';
+import {AdminState} from '../../../admin/admin.state';
+import {ArticlesService} from '../../../articles/articles.service';
+import {REQUEST_PREVIEW} from '../../article-editor.action-types';
+import {requestPreviewFailed, updatePreview} from '../../article-editor.actions';
 
 function* fetch({markdown}) {
-    try {
-        const admin: AdminState = yield select((state: any) => state.admin);
+  try {
+    const admin: AdminState = yield select((state: any) => state.admin);
 
-        const articlesService = new ArticlesService();
+    const articlesService = new ArticlesService();
 
-        const {markdown: {markdownOutput}} = yield call(articlesService.fetchPreview.bind(articlesService), markdown, admin.auth.id);
+    const {markdown: {markdownOutput}} = yield call(articlesService.fetchPreview.bind(articlesService), markdown, admin.auth.id);
 
-        yield put(updatePreview(markdownOutput));
-    } catch (err) {
-        yield put(requestPreviewFailed());
-    }
+    yield put(updatePreview(markdownOutput));
+  } catch (err) {
+    yield put(requestPreviewFailed());
+  }
 }
 
 export function* requestPreviewSaga() {
-    yield* takeEvery(REQUEST_PREVIEW, fetch);
+  yield* takeEvery(REQUEST_PREVIEW, fetch);
 }

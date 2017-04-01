@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Breadcrumbs from 'react-breadcrumbs';
-import { Col, Grid, Row } from 'react-flexbox-grid/lib/index';
+import {Col, Grid, Row} from 'react-flexbox-grid/lib/index';
 
 const style = {
   container: {

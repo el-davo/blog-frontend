@@ -55,10 +55,6 @@ describe('<ArticleViewerComponent />', () => {
       wrapper.find({avatar: 'http://localhost:8000/img.png'}).should.have.length(1);
     });
 
-    it('should set the correct date of modified article', () => {
-      mounted.find(Time).should.have.length(1);
-    });
-
     it('should contain a CardText component', () => {
       wrapper.find(CardText).should.have.length(1);
     });

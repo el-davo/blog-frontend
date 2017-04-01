@@ -1,19 +1,18 @@
-import { mount, shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 import * as React from 'react';
-import { spy } from 'sinon';
 import AutoComplete from 'material-ui/AutoComplete';
-import { WidgetSearch } from './widget-search.component';
+import {WidgetSearch} from './widget-search.component';
 
 describe('<WidgetSearch />', () => {
 
-    let wrapper;
+  let wrapper;
 
-    beforeEach(() => {
-        wrapper = shallow(<WidgetSearch />);
-    });
+  beforeEach(() => {
+    wrapper = shallow(<WidgetSearch />);
+  });
 
-    it('should contain an AutoComplete component', () => {
-        wrapper.find(AutoComplete).should.have.length(1);
-    });
+  it('should contain an AutoComplete component', () => {
+    wrapper.find(AutoComplete).should.have.length(1);
+  });
 
 });

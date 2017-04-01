@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as adminActions from '../admin/admin.actions';
 import * as actions from './pending-articles.actions';
-import { PendingArticlesComponent } from './pending-articles.component';
-import { BreadcrumbComponent } from '../common/breadcrumb/breadcrumb.component';
-import { PendingArticlesState } from './pending-articles.state';
-import { Article } from '../landing/landing.state';
+import {PendingArticlesComponent} from './pending-articles.component';
+import {BreadcrumbComponent} from '../common/breadcrumb/breadcrumb.component';
+import {PendingArticlesState} from './pending-articles.state';
+import {Article} from '../landing/landing.state';
 
 interface Props {
   routes: any;
@@ -22,12 +22,12 @@ interface Actions {
 export const PendingArticlesContainer: React.StatelessComponent<Props> = (props) => {
   return (
     <div>
-      <BreadcrumbComponent routes={props.routes} />
+      <BreadcrumbComponent routes={props.routes}/>
 
       <PendingArticlesComponent
         pendingArticles={props.pendingArticles}
         fetchPendingArticles={props.actions.fetchPendingArticles}
-        showDeleteArticleModal={props.actions.showDeleteArticleModal} />
+        showDeleteArticleModal={props.actions.showDeleteArticleModal}/>
     </div>
   );
 };
@@ -41,7 +41,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ ...adminActions, ...actions }, dispatch)
+    actions: bindActionCreators({...adminActions, ...actions}, dispatch)
   };
 }
 

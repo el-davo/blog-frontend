@@ -1,5 +1,5 @@
-import { spy } from 'sinon';
-import { load } from 'proxyquire';
+import {spy} from 'sinon';
+import {load} from 'proxyquire';
 
 describe('Articles Service', () => {
 
@@ -44,7 +44,7 @@ describe('Articles Service', () => {
 
     });
 
-    it('should fetch a list of articles from the server', async () => {
+    it('should fetch a list of articles from the server', async() => {
       const response = await articlesService.fetchArticles();
 
       const filter = {
@@ -87,7 +87,7 @@ describe('Articles Service', () => {
 
     });
 
-    it('should fetch a specific article', async () => {
+    it('should fetch a specific article', async() => {
       const response = await articlesService.fetchArticle('abc123');
 
       response.should.eql(ARTICLES[0]);
@@ -120,7 +120,7 @@ describe('Articles Service', () => {
 
     });
 
-    it('should save a new article', async () => {
+    it('should save a new article', async() => {
       const response = await articlesService.saveArticle(ARTICLES[0]);
 
       postSpy.calledOnce.should.be.true();
@@ -128,12 +128,12 @@ describe('Articles Service', () => {
       postSpy.calledWith('/articles', ARTICLES[0]).should.be.true();
     });
 
-    it('should send authorization in header', async () => {
+    it('should send authorization in header', async() => {
       const response = await articlesService.saveArticle(ARTICLES[0], 'abc123');
 
       postSpy.calledOnce.should.be.true();
 
-      postSpy.calledWith('/articles', ARTICLES[0], { authorization: 'abc123' }).should.be.true();
+      postSpy.calledWith('/articles', ARTICLES[0], {authorization: 'abc123'}).should.be.true();
     });
   });
 
@@ -157,7 +157,7 @@ describe('Articles Service', () => {
       articlesService = new ArticlesService();
     });
 
-    it('should edit an article', async () => {
+    it('should edit an article', async() => {
       const response = await articlesService.editArticle(ARTICLES[0]);
 
       putSpy.calledOnce.should.be.true();
@@ -165,12 +165,12 @@ describe('Articles Service', () => {
       putSpy.calledWith(`/articles/${ARTICLES[0].id}`, ARTICLES[0]).should.be.true();
     });
 
-    it('should send authorization in header', async () => {
+    it('should send authorization in header', async() => {
       const response = await articlesService.editArticle(ARTICLES[0], 'abc123');
 
       putSpy.calledOnce.should.be.true();
 
-      putSpy.calledWith(`/articles/${ARTICLES[0].id}`, ARTICLES[0], { authorization: 'abc123' }).should.be.true();
+      putSpy.calledWith(`/articles/${ARTICLES[0].id}`, ARTICLES[0], {authorization: 'abc123'}).should.be.true();
     });
   });
 
@@ -194,12 +194,12 @@ describe('Articles Service', () => {
       articlesService = new ArticlesService();
     });
 
-    it('should get a preview of markdown', async () => {
+    it('should get a preview of markdown', async() => {
       const response = await articlesService.fetchPreview('abc123', 'abc123');
 
       putSpy.calledOnce.should.be.true();
 
-      postSpy.calledWith(`/articles/markdown`, { markdown: 'abc123' }, { authorization: 'abc123' }).should.be.true();
+      postSpy.calledWith(`/articles/markdown`, {markdown: 'abc123'}, {authorization: 'abc123'}).should.be.true();
     });
 
   });
@@ -225,12 +225,12 @@ describe('Articles Service', () => {
       articlesService = new ArticlesService();
     });
 
-    it('should delete an article', async () => {
+    it('should delete an article', async() => {
       await articlesService.deleteArticle(ARTICLES[0], 'abc123');
 
       deleteSpy.calledOnce.should.be.true();
 
-      deleteSpy.calledWith(`/articles/${ARTICLES[0].id}`, { authorization: 'abc123' }).should.be.true();
+      deleteSpy.calledWith(`/articles/${ARTICLES[0].id}`, {authorization: 'abc123'}).should.be.true();
     });
 
   });
@@ -257,7 +257,7 @@ describe('Articles Service', () => {
 
     });
 
-    it('should fetch a list of pending articles from the server', async () => {
+    it('should fetch a list of pending articles from the server', async() => {
       const response = await articlesService.fetchPendingArticles();
 
       const filter = {

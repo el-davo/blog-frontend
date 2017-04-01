@@ -1,29 +1,29 @@
-import { FETCH_NEWEST_ARTICLES, UPDATE_NEWEST_ARTICLES, FETCH_NEWEST_ARTICLES_FAILED } from './landing.action-types';
-import { fetchNewestArticles, updateNewestArticles, fetchNewestArticlesFailed } from './landing.actions';
-import { Article } from './landing.state';
+import {FETCH_NEWEST_ARTICLES, UPDATE_NEWEST_ARTICLES, FETCH_NEWEST_ARTICLES_FAILED} from './landing.action-types';
+import {fetchNewestArticles, updateNewestArticles, fetchNewestArticlesFailed} from './landing.actions';
+import {Article} from './landing.state';
 
 describe('Landing Actions', () => {
 
-    describe('fetchNewestArticles()', () => {
+  describe('fetchNewestArticles()', () => {
 
-        it('should get the newest articles', () => {
-            fetchNewestArticles().should.eql({ type: FETCH_NEWEST_ARTICLES });
-        });
+    it('should get the newest articles', () => {
+      fetchNewestArticles().should.eql({type: FETCH_NEWEST_ARTICLES});
     });
+  });
 
-    describe('updateNewestArticles()', () => {
+  describe('updateNewestArticles()', () => {
 
-        it('should update the newest articles list', () => {
-            const articles = [{}, {}, {}] as Article[];
+    it('should update the newest articles list', () => {
+      const articles = [{}, {}, {}] as Article[];
 
-            updateNewestArticles(articles).should.eql({ type: UPDATE_NEWEST_ARTICLES, articles });
-        });
+      updateNewestArticles(articles).should.eql({type: UPDATE_NEWEST_ARTICLES, articles});
     });
+  });
 
-    describe('fetchNewestArticlesFailed()', () => {
+  describe('fetchNewestArticlesFailed()', () => {
 
-        it('should alert the user that fetching newest articles failed', () => {
-            fetchNewestArticlesFailed().should.eql({ type: FETCH_NEWEST_ARTICLES_FAILED });
-        });
+    it('should alert the user that fetching newest articles failed', () => {
+      fetchNewestArticlesFailed().should.eql({type: FETCH_NEWEST_ARTICLES_FAILED});
     });
+  });
 });

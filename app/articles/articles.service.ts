@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import {Auth} from '../admin/admin.state';
 import {HttpService} from '../common/http.service';
 import {Article} from '../landing/landing.state';
 
