@@ -1,40 +1,40 @@
-import { load } from 'proxyquire';
-import { spy } from 'sinon';
-import { Auth } from './admin.state';
+import {load} from 'proxyquire';
+import {spy} from 'sinon';
+import {Auth} from './admin.state';
 
 describe('AdminService', () => {
 
-    let adminService;
-    let postSpy;
+  let adminService;
+  let postSpy;
 
-    beforeEach(() => {
-        postSpy = spy();
+  beforeEach(() => {
+    postSpy = spy();
 
-        class HttpService {
-            post(path: string, body: any) {
-                postSpy(path, body);
-                return Promise.resolve({ id: 'abc123' } as Auth);
-            }
-        }
+    class HttpService {
+      post(path: string, body: any) {
+        postSpy(path, body);
+        return Promise.resolve({id: 'abc123'} as Auth);
+      }
+    }
 
-        const {AdminService} = load('./admin.service', {
-            '../common/http.service': {
-                HttpService
-            }
-        });
-
-        adminService = new AdminService();
+    const {AdminService} = load('./admin.service', {
+      '../common/http.service': {
+        HttpService
+      }
     });
 
-    describe('login()', () => {
+    adminService = new AdminService();
+  });
 
-        it('should login to the blog', async () => {
-            const response: Auth = await adminService.login('username', 'password');
+  describe('login()', () => {
 
-            response.id.should.eql('abc123');
+    it('should login to the blog', async() => {
+      const response: Auth = await adminService.login('username', 'password');
 
-            postSpy.calledOnce.should.be.true();
-            postSpy.calledWith('/users/login', { username: 'username', password: 'password' }).should.be.true();
-        });
+      response.id.should.eql('abc123');
+
+      postSpy.calledOnce.should.be.true();
+      postSpy.calledWith('/users/login', {username: 'username', password: 'password'}).should.be.true();
     });
+  });
 });
