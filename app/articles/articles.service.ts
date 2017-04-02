@@ -39,7 +39,7 @@ export class ArticlesService {
     return this.httpService.post<string>('/articles/markdown', {markdown}, {authorization});
   }
 
-  deleteArticle(article: Article, authorization: string): Promise<Number> {
+  deleteArticle(article: Article, authorization: string): Promise<number> {
     return this.httpService.delete(`/articles/${article.id}`, {authorization});
   }
 

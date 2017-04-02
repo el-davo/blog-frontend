@@ -44,7 +44,7 @@ export class HttpService {
     });
   }
 
-  delete(path: string, headers: any = {}): Promise<Number> {
+  delete(path: string, headers: any = {}): Promise<number> {
     return fetch(`${this.getBase()}${path}`, {
       method: 'DELETE',
       headers: {

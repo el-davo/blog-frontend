@@ -7,19 +7,20 @@ let BabelPlugin = require("babel-webpack-plugin");
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 let BabiliPlugin = require("babili-webpack-plugin");
+let ImageminPlugin = require('imagemin-webpack-plugin').default;
 let baseConfig = require('./webpack.config.base');
 
 module.exports = merge(baseConfig, {
   devtool: 'cheap-module-source-map',
 
   entry: [
-    //'babel-polyfill',
+    'babel-polyfill',
     './app/index'
   ],
 
   output: {
     publicPath: './',
-    filename: 'bundle.js',
+    filename: 'bundle-[chunkhash].js',
   },
 
   module: {
@@ -59,18 +60,23 @@ module.exports = merge(baseConfig, {
         warnings: false
       }
     }),
-    new CompressionPlugin({
-      algorithm: "gzip",
-      test: /\.js$|\.html$\.css$|/,
-      minRatio: 0.8
-    }),
     new CopyWebpackPlugin([
-      {from: 'app/img/**'},
-      {from: 'manifest.yml'},
-      {from: 'nginx.conf'}
-    ], {})
-  ],
-
-  devtool: false
+      {from: 'app/img/**'}
+    ], {}),
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.js$|\.html$|\.css$/,
+      threshold: 0,
+      minRatio: 0
+    }),
+    new ImageminPlugin({
+      pngquant: {
+        quality: '95-100'
+      },
+      optipng: {
+        optimizationLevel: 9
+      }
+    })
+  ]
 
 });

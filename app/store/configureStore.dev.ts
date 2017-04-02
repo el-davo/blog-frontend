@@ -1,8 +1,8 @@
 import {hashHistory} from 'react-router';
 import {routerMiddleware} from 'react-router-redux';
 import {applyMiddleware, compose, createStore} from 'redux';
-import * as reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
-import * as createLogger from 'redux-logger';
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
+import createLogger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import {rootReducer} from '../rootReducer';
 import {rootSaga} from '../rootSaga';
