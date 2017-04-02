@@ -11,6 +11,7 @@ import {fetchArticleSaga} from './article-viewer/saga/fetch-article.saga';
 import {navigateToSaga} from './common/navbar/widgets/admin/saga/navigate-to.saga';
 import {fetchNewestArticlesSaga} from './landing/saga/fetch-newest-articles.saga';
 import {fetchPendingArticlesSaga} from './pending-articles/saga/fetch-pending-articles.saga';
+import {fetchAllArticlesSaga} from './articles/saga/fetch-articles.saga';
 
 export function* rootSaga() {
   yield [
@@ -25,6 +26,7 @@ export function* rootSaga() {
     fork(editingRequestPreviewSaga),
     fork(deleteArticleSaga),
     fork(fetchPendingArticlesSaga),
-    fork(navigateToSaga)
+    fork(navigateToSaga),
+    fork(fetchAllArticlesSaga)
   ];
 }

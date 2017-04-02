@@ -6,6 +6,7 @@ import {articleEditorReducer as articleEditor} from './article-editor/article-ed
 import {articleViewerReducer as articleViewer} from './article-viewer/article-viewer.reducer';
 import {landingReducer as landing} from './landing/landing.reducer';
 import {pendingArticlesReducer as pendingArticles} from './pending-articles/pending-articles.reducer';
+import {articlesReducer as articles} from './articles/articles.reducer';
 
 export const rootReducer = combineReducers({
   toastr,
@@ -14,5 +15,6 @@ export const rootReducer = combineReducers({
   articleViewer,
   articleEditor,
   admin,
-  pendingArticles
+  pendingArticles,
+  articles
 });

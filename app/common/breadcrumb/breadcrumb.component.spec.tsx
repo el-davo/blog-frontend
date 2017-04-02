@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {shallow} from 'enzyme';
-import * as Breadcrumbs from 'react-breadcrumbs';
+import Breadcrumbs from 'react-breadcrumbs';
 import {BreadcrumbComponent} from './breadcrumb.component';
 
 describe('<BreadcrumbComponent />', () => {
@@ -16,7 +16,8 @@ describe('<BreadcrumbComponent />', () => {
   describe('layout', () => {
 
     it('should contain a Breadcrumbs component', () => {
-      wrapper.find(Breadcrumbs).should.have.length(1);
+      wrapper.find({routes: {}}).should.have.length(1);
+      wrapper.find({params: {}}).should.have.length(1);
     });
   });
 

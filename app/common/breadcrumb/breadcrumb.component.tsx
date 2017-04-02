@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Breadcrumbs from 'react-breadcrumbs';
+import Breadcrumbs from 'react-breadcrumbs';
 import {Col, Grid, Row} from 'react-flexbox-grid/lib/index';
 
 const style = {
@@ -27,7 +27,7 @@ export class BreadcrumbComponent extends React.Component<Props, any> {
             <Breadcrumbs
               routes={this.props.routes}
               params={this.props.params}
-              excludes={['Edit', 'All Articles']}
+              excludes={['Edit']}
               displayMissing={false}
             />
           </Col>
