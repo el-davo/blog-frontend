@@ -112,7 +112,6 @@
   },
   "dependencies": {
     "cfenv": "^1.0.4",
-    "compression": "^1.6.2",
     "connect-gzip-static": "1.0.0",
     "consign": "^0.1.2",
     "express": "4.13.3"
