@@ -3,7 +3,7 @@ import * as React from 'react';
 import {spy} from 'sinon';
 import Dialog from 'material-ui/Dialog';
 import IconButton from 'material-ui/IconButton';
-import IconLogin from 'material-ui/svg-icons/action/face';
+import IconLogin from 'material-ui-icons/Face';
 import TextField from 'material-ui/TextField';
 import {LoginComponent} from './login.component';
 import {AdminState} from '../../../../admin/admin.state';

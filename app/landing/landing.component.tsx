@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Col, Grid, Row} from 'react-flexbox-grid/lib/index';
-import RaisedButton from 'material-ui/RaisedButton';
-import ViewIcon from 'material-ui/svg-icons/action/list';
+import Button from 'material-ui/Button';
+import ViewIcon from 'material-ui-icons/List';
 import {Link} from 'react-router';
 import {AboutCardComponent} from './about/about-card.component';
 import {LandingState} from './landing.state';
@@ -33,7 +33,7 @@ export class LandingComponent extends React.Component<Props, any> {
 
             <div style={{textAlign: 'center'}}>
               <Link to="/articles">
-                <RaisedButton
+                <Button
                   label="View All Articles"
                   primary={true}
                   icon={<ViewIcon />}/>

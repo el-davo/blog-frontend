@@ -1,5 +1,5 @@
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import * as React from 'react';
 import {Link} from 'react-router';
 import {AdminState} from '../admin/admin.state';
@@ -30,12 +30,12 @@ export class DeleteArticleModal extends React.Component<Props, any> {
 
   render() {
     const actions = [
-      <FlatButton
+      <Button
         label="Cancel"
         primary={true}
         onTouchTap={this._hideDeleteArticleModal}
       />,
-      <FlatButton
+      <Button
         label="Delete"
         primary={true}
         keyboardFocused={true}

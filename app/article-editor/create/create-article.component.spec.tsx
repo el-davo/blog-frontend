@@ -2,7 +2,7 @@ import {shallow} from 'enzyme';
 import * as React from 'react';
 import {spy} from 'sinon';
 import {Card, CardText, CardActions} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import {CreateArticleComponent} from './create-article.component';
 import {ArticleNameInputComponent} from './form/article-name-input.component';
 import {ArticleSummaryInputComponent} from './form/article-summary.component';
@@ -83,7 +83,7 @@ describe('<CreateArticleComponent />', () => {
     });
 
     it('should have a save button and a preview button', () => {
-      wrapper.find(CardActions).find(FlatButton).should.have.length(2);
+      wrapper.find(CardActions).find(Button).should.have.length(2);
     });
 
     it('should say "Save" on the save button', () => {

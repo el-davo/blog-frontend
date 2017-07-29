@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {spy} from 'sinon';
-import Toggle from 'material-ui/Toggle';
+import {FormControlLabel} from 'material-ui/Form';
 import {shallow} from 'enzyme';
 import {ArticlePublicToggleComponent} from './article-public-toggle.component';
 import {ArticleEditorState} from '../../article-editor.state';
@@ -40,7 +40,7 @@ describe('<ArticlePublicToggleComponent />', () => {
   describe('layout', () => {
 
     it('should contain a Toggle', () => {
-      publicOnWrapper.find(Toggle).should.have.length(1);
+      publicOnWrapper.find(FormControlLabel).should.have.length(1);
     });
 
     it('should have the correct label for the Toggle', () => {
@@ -59,7 +59,7 @@ describe('<ArticlePublicToggleComponent />', () => {
   describe('actions', () => {
 
     it('should toggle the public state when clicked', () => {
-      publicOnWrapper.find(Toggle).simulate('toggle');
+      publicOnWrapper.find(FormControlLabel).simulate('toggle');
 
       newToggleArticlePublic.calledOnce.should.be.true();
     });

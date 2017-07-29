@@ -3,7 +3,7 @@ import * as React from 'react';
 import {spy} from 'sinon';
 import {Card, CardText, CardActions} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import {EditArticleComponent} from './edit-article.component';
 import {ArticleEditorState} from '../article-editor.state';
 import {ArticleNameInputComponent} from './form/article-name-input.component';
@@ -88,7 +88,7 @@ describe('<EditArticleComponent />', () => {
     });
 
     it('should have an edit button and a preview button', () => {
-      wrapper.find(CardActions).find(FlatButton).should.have.length(2);
+      wrapper.find(CardActions).find(Button).should.have.length(2);
     });
 
     it('should contain an edit button with the label "Edit"', () => {

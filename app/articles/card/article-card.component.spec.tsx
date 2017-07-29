@@ -2,7 +2,7 @@ import * as React from 'react';
 import {spy} from 'sinon';
 import {shallow} from 'enzyme';
 import {Card, CardActions, CardMedia} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import {Link} from 'react-router';
 import {random} from 'faker';
 import {ArticleCardComponent} from './article-card.component';
@@ -54,7 +54,7 @@ describe('<ArticleCardComponent />', () => {
     });
 
     it('should have a button to edit the article and delete the article', () => {
-      adminWrapper.find(CardActions).find(FlatButton).should.have.length(2);
+      adminWrapper.find(CardActions).find(Button).should.have.length(2);
     });
 
     it('should have the correct text on the edit button', () => {

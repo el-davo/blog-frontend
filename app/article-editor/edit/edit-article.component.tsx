@@ -1,5 +1,5 @@
 import {Card, CardActions, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 import * as React from 'react';
 import {Col, Grid, Row} from 'react-flexbox-grid/lib/index';
 import {Article} from '../../landing/landing.state';
@@ -73,8 +73,8 @@ export class EditArticleComponent extends React.Component<Props, any> {
                   editKeyArticleContent={this.props.editKeyArticleContent}/>
               </CardText>
               <CardActions>
-                <FlatButton label="Edit" onClick={this._editArticle}/>
-                <FlatButton label="Preview" onClick={this._editingRequestPreview}/>
+                <Button label="Edit" onClick={this._editArticle}/>
+                <Button label="Preview" onClick={this._editingRequestPreview}/>
               </CardActions>
             </Card>
 

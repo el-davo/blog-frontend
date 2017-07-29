@@ -1,17 +1,19 @@
-import {Toolbar, ToolbarGroup} from 'material-ui/Toolbar';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 import * as React from 'react';
+import {withStyles, createStyleSheet} from 'material-ui/styles';
 import WidgetAdminContainer from './widgets/admin/widget-admin.container';
 
-const style = {
-  marginBottom: 20,
-  backgroundColor: '#00BCD4'
-};
-
 export const NavbarComponent = () => (
-  <Toolbar style={style}>
-    <ToolbarGroup />
-    <ToolbarGroup lastChild={true}>
-      <WidgetAdminContainer />
-    </ToolbarGroup>
-  </Toolbar>
+    <div>
+        <AppBar position="static" color="default">
+            <Toolbar>
+                <Typography type="title" color="inherit">
+                    Title
+                </Typography>
+                <WidgetAdminContainer />
+            </Toolbar>
+        </AppBar>
+    </div>
 );
